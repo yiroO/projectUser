@@ -17,7 +17,9 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	crossorigin="anonymous"></script>
-
+	
+	
+	<!-- DATA TABLE -->
 <script
 	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script
@@ -35,14 +37,24 @@
 <!-- Nuestro css-->
 <link rel="stylesheet" type="text/css" href="static/css/index.css"
 	th:href="@{/css/index.css}">
+
+<!-- Script para la paginacion, y busqueda -->
+<script type="text/javascript">
+	    $(document).ready(function() {
+	        //Asegurate que el id que le diste a la tabla sea igual al texto despues del simbolo #
+	        $('#userList').DataTable();
+	    } );
+	</script>
+
 </head>
 <body>
-	<div style="mt-0">
-		<div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist" style="margin-top: 2cm;">
+	<div style="">
+		<div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist"
+			style="margin-top: 2cm;">
 			<ul class="nav nav-tabs justify-content-end" id="myTab"
 				role="tablist">
 				<li class="nav-item" role="presentation"><a
-					class="nav-link active" id="list-tab" th:classappend=" ${listTab}"
+					class="nav-link" id="list-tab" th:classappend=" ${listTab}"
 					data-toggle="tab" href="#list" role="tab" aria-controls="list"
 					aria-selected="false">List</a></li>
 				<li class="nav-item" role="presentation"><a class="nav-link"
@@ -70,7 +82,7 @@
 							<h4>User Information</h4>
 						</div>
 						<div class="card-body" style="background-color: gainsboro;">
-						 	<div th:include="user-form/user-form.html" th:remove="tag"></div>
+							<div th:include="user-form/user-form.html" th:remove="tag"></div>
 						</div>
 					</div>
 				</div>

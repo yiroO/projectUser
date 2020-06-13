@@ -1,36 +1,32 @@
 <div class="table-responsive">
-<table id="userList" class="table table-bordered table-hover table-striped">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Username</th>
-      <th scope="row">E-mail</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>algo@email.com</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>algo@email.com</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>algo@email.com</td>
-    </tr>
-  </tbody>
-</table>
-</div> 
+	<table id="userList"
+		class="table table-bordered table-hover table-striped">
+		<thead class="thead-light">
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">First</th>
+				<th scope="col">Last</th>
+				<th scope="col">Username</th>
+				<th scope="row">E-mail</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="list: ${userList}">
+				<th scope="row" th:text="${list.id}"></th>
+				<td th:text="${list.firstName}"></td>
+				<td th:text="${list.LastName}"></td>
+				<td th:text="${list.userName}"></td>
+				<td th:text="${list.email}"></td>
+				<td>
+				<span> 
+				<a href="#" ><i class="fas fa-edit"></i></a>
+				</span>
+				<span>
+				<a href="#" ><i class="fas fa-user-times"></i></a>
+				</span>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
