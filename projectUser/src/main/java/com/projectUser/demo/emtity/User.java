@@ -15,6 +15,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.springframework.lang.NonNull;
+
+import com.sun.istack.NotNull;
+
 @Entity
 @Table
 public class User implements Serializable{
@@ -26,21 +30,26 @@ public class User implements Serializable{
 	private Long id;
 	
 	@Column
+	@NotNull
 	private String firstName;
 	
 	@Column
+	@NotNull
 	private String lastName;
 	
 	@Column(unique=true)
 	private String email;
 	
 	@Column(unique=true)
+	@NotNull
 	private String userName;
 	
 	@Column
+	@NotNull
 	private String password;
 	
 	@Transient
+	@NotNull
 	private String confirmPassword;
 	
 	@ManyToMany(fetch= FetchType.LAZY)
